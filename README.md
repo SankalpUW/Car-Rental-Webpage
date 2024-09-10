@@ -4,6 +4,8 @@ Car rental website built using React.js and Tailwind.Queries are made using Apol
 
 ## How to use
 
+You can find the project [here](https://car-rental-webpage-7jmr.vercel.app/)
+
 The backend isn't currently being hosted, since I couldn't find any good services to deploy it for free. I'm currently trying to setup a proxmox server on an old laptop that I can use as my server. If you want to check out a demo of the project, feel free to reach out to me at **skodande@uwaterloo.ca**
 
 Here are the steps to run the application on your local machine:
