@@ -48,4 +48,17 @@ export class CarsResolver {
       throw err;
     });
   }
+
+  @Mutation((returns) => Boolean)
+  public async deleteCar(
+   @Args('carId') carId: string,
+): Promise<boolean> {
+  return await this.carsService.deleteCar(carId)
+    .then(() => {
+      return true;  // Return true if deletion is successful
+    })
+    .catch((err) => {
+      throw new Error(`Failed to delete car with ID ${carId}: ${err.message}`);  // Throw an error if something goes wrong
+    });
+}
 }

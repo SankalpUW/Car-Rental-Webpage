@@ -49,4 +49,20 @@ export class CarsService {
     
         return newCar;
       }
+
+      public async deleteCar(carId: string): Promise<boolean> {
+        const car = await this.carRepository.findOneBy({ id: carId }); // Specify the field explicitly
+      
+        if (!car) {
+          throw new InternalServerErrorException(`Car with ID ${carId} not found`);
+        }
+      
+        await this.carRepository.remove(car).catch((err) => {
+          throw new InternalServerErrorException('Failed to delete car.');
+        });
+      
+        return true;
+      }
+      
+      
 }
